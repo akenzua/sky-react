@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import Results from "../components/Results";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -70,6 +71,8 @@ const Search = () => {
           Search
         </button>
       </div>
+
+      <Results currentResults={results} />
     </main>
   );
 };
