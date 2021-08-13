@@ -1,11 +1,17 @@
 import React, { useState, useCallback } from "react";
 import Results from "../components/Results";
+import usePagination from "../hooks/usePagination";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const [, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [resultPerPage] = useState(10);
+  const [currentResults, paginate, totalResult] = usePagination(
+    results,
+    resultPerPage
+  );
 
   // Define searchHistory state
   //   const [searchHistory, setSearchHistory] = useState([]);
@@ -72,7 +78,11 @@ const Search = () => {
         </button>
       </div>
 
-      <Results currentResults={results} />
+      <Results
+        currentResults={currentResults}
+        loading={loading}
+        total={totalResult}
+      />
     </main>
   );
 };
