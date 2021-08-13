@@ -25,6 +25,11 @@ const Search = () => {
     setSearchTerm(e.target.value);
   };
 
+  //   TODO - when the user hit back, show the last query result
+  //   1. Listen the history API when user click back and call history.go(1) to prevent back event
+  //   2. Get previous search terms with setSearchTerm(searchHistory[searchHistory.length - 2]);
+  //   3. Then call fetchRequest
+
   // handle submit
   const handleSubmit = () => {
     const encodedTerm = encodeURI(searchTerm);
