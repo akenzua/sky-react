@@ -1,10 +1,10 @@
 ## Installation
 
-### `git clone `
+`git clone https://github.com/akenzua/sky-react.git`
 
-### `npm Install`
+`npm Install`
 
-### `npm start`
+`npm start`
 
 ## Usage
 
