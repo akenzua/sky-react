@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import Results from "../components/Results";
 import usePagination from "../hooks/usePagination";
+import Pagination from "../components/Pagination";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -82,6 +83,11 @@ const Search = () => {
         currentResults={currentResults}
         loading={loading}
         total={totalResult}
+      />
+      <Pagination
+        resultPerPage={resultPerPage}
+        totalResults={totalResult}
+        paginate={paginate}
       />
     </main>
   );
